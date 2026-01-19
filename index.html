@@ -21,105 +21,129 @@
     <meta name="twitter:image" content="https://legeste.london/rose.jpg">
 
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-color: #F5F5F5;  /* Adjust this if needed: #F6F6F6, #F7F7F7, #F8F8F8 */
+        }
 
-        html, body { background: #ffffff; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-            background: #ffffff; /* matched to rose.jpg top-left background (not shadow area) */
-            color: #1a1a1a;
-            line-height: 1.6;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg-color);
+            color: #000000;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            min-height: 100vh;
+            justify-content: center;
             padding: 40px 20px;
+            -webkit-font-smoothing: antialiased;
         }
 
         .logo {
             font-size: 11px;
-            letter-spacing: 3px;
+            font-weight: 400;
+            letter-spacing: 2.5px;
             text-transform: uppercase;
-            font-weight: 300;
             margin-bottom: 60px;
-            transition: letter-spacing 0.3s ease, opacity 0.7s ease;
-            cursor: default;
+            transition: letter-spacing 0.3s ease;
         }
-        .logo:hover { letter-spacing: 4px; opacity: 0.7; }
+
+        .logo:hover {
+            letter-spacing: 3.5px;
+        }
 
         .product-image {
-            max-width: 420px;
+            max-width: 400px;
             width: 100%;
             height: auto;
-            margin-bottom: 60px;
             display: block;
-            background: #ffffff; /* eliminates any seam if the jpg has a near-white matte */
-            border: 0;
-            outline: 0;
-            box-shadow: none;
-            filter: none;
+            margin-bottom: 60px;
+            /* No CSS shadow — shadow is baked into image */
         }
 
         .tagline {
             font-size: 16px;
             font-weight: 300;
-            margin-bottom: 60px;
-            text-align: center;
-            color: #2a2a2a;
+            margin-bottom: 40px;
+            color: #000000;
         }
 
         .price {
             font-size: 32px;
             font-weight: 300;
             margin-bottom: 60px;
-            text-align: center;
         }
 
         .availability {
             font-size: 15px;
             font-weight: 300;
             margin-bottom: 70px;
-            text-align: center;
-            color: #2a2a2a;
+            color: #000000;
         }
 
-        .contact {
+        .instagram {
             font-size: 12px;
             font-weight: 300;
-            text-align: center;
         }
 
-        .contact a {
-            color: #1a1a1a;
+        .instagram a {
+            color: #000000;
             text-decoration: none;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.2s ease;
         }
-        .contact a:hover { opacity: 0.6; }
-        .contact a:focus { outline: 2px solid #1a1a1a; outline-offset: 4px; }
 
-        @media (max-width: 768px) {
-            body { padding: 30px 15px; }
-            .logo { font-size: 10px; letter-spacing: 2.5px; margin-bottom: 50px; }
-            .product-image { max-width: 320px; margin-bottom: 50px; }
-            .tagline { font-size: 15px; margin-bottom: 50px; }
-            .price { font-size: 28px; margin-bottom: 50px; }
-            .availability { font-size: 14px; margin-bottom: 60px; }
-            .contact { font-size: 11px; }
+        .instagram a:hover {
+            opacity: 0.6;
+        }
+
+        .instagram a:focus {
+            outline: 1px solid rgba(0, 0, 0, 0.3);
+            outline-offset: 4px;
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 10px;
+                margin-bottom: 50px;
+            }
+
+            .product-image {
+                max-width: 320px;
+                margin-bottom: 50px;
+            }
+
+            .tagline {
+                font-size: 15px;
+                margin-bottom: 35px;
+            }
+
+            .price {
+                font-size: 28px;
+                margin-bottom: 50px;
+            }
+
+            .availability {
+                font-size: 14px;
+                margin-bottom: 60px;
+            }
+
+            .instagram {
+                font-size: 11px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="logo">LE GESTE</div>
-
     <img src="rose.jpg" alt="Single red rose in clear protective sleeve inside matte black paper cone" class="product-image">
-
     <div class="tagline">When gestures matter</div>
     <div class="price">£25</div>
     <div class="availability">After dark</div>
-
-    <div class="contact">
-        <a href="https://instagram.com/legeste.london" target="_blank" rel="noopener">@legeste.london</a>
-    </div>
+    <div class="instagram"><a href="https://instagram.com/legeste.london">@legeste.london</a></div>
 </body>
 </html>
